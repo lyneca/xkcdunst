@@ -1,0 +1,14 @@
+#!/bin/bash
+
+set -- junk $(cat ~/.config/xkcd | tr 'A-Z' 'a-z' | dmenu -p open)
+
+shift
+
+if [ $# -eq 0 ]; then
+    exit
+fi
+
+comic="$()"
+
+firefox "https://xkcd.com/$(echo $1 | cut -d ' ' -f 1)"
+
